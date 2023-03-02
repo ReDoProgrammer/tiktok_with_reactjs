@@ -1,7 +1,15 @@
-import {Header} from '../../Layout/DefaultLayout/Header'
+import Header from '../../Layout/DefaultLayout/Header'
 function Upload() {
 
-    return ( <h2>Upload</h2> );
+    return ( 
+        <div>
+            <Header/>
+            <div className='content'>
+                Upload content
+            </div>
+        
+        </div>
+     );
 }
 
 export default Upload;
