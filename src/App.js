@@ -9,7 +9,12 @@ function App() {
       <div className='App'>
         <Routes>
           {publicRoutes.map((route, index) => {
-            const Layout = route.layout === null? Fragment: DefaultLayout;// nếu trong route không set layout (null) thì dùng Fragement, ngược lai thì mặc định sẽ là defaultlayout
+            let Layout = DefaultLayout;
+            if(route.layout === null){
+              Layout = Fragment;
+            }else{
+              Layout = route.layout;
+            }
             const Page = route.component;
             return <Route key={index} path={route.path} element={
               <Layout>
